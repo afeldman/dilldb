@@ -122,8 +122,13 @@ class DillDB:
 
         return True
 
-    def dump(self):
-        '''Force dump memory db to the database file'''
+    def dump(self) -> bool:
+        '''Force dump memory db to the database file
+
+        Returns:
+            (bool): true if the data is dumped to the file
+
+        '''
 
         if self.json:
             json.dump(self.db, open(self.loco, 'wt'))
