@@ -41,7 +41,7 @@ jobs:
     - uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "doc/"
-        build-command: "sphinx-build -E -a --color -v -j 'auto' -b html . _build"
+        build-command: "sphinx-build -E -a --color -v -j 'auto' -b html . doc/_build"
         pre-build-command: "sphinx-apidoc -f -o doc/_api ./dilldb"
     - uses: actions/upload-artifact@v1
       with:
