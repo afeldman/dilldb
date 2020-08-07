@@ -18,13 +18,12 @@ sys.path.insert(0, os.path.abspath('../..'))
 # -- Project information -----------------------------------------------------
 
 project = 'DillDB'
-copyright = '2020, anton Feldmann'
-author = 'anton Feldmann'
+copyright = '2020, anton feldmann'
+author = 'anton feldmann'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1'
+release = '0.1.0'
 
-autodoc_default_flags = ['members', 'private-members', 'special-members', 'show-inheritance']
 
 # -- General configuration ---------------------------------------------------
 
@@ -32,11 +31,9 @@ autodoc_default_flags = ['members', 'private-members', 'special-members', 'show-
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.napoleon',
     'sphinx.ext.autodoc',
-    'sphinx.ext.autosectionlabel',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.todo',
-    'sphinx.ext.viewcode',
+    'sphinx.ext.coverage'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -46,6 +43,7 @@ templates_path = ['_templates']
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
+
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -58,10 +56,3 @@ html_theme = 'alabaster'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-
-# If true, `todo` and `todoList` produce output, else they produce nothing.
-todo_include_todos = True
-
-# If true, links to the reST sources are added to the pages.
-html_copy_source = False
-html_show_sourcelink = False

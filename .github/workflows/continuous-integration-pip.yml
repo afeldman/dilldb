@@ -33,18 +33,8 @@ jobs:
         run: pip install .
       - name: build wheel
         run: ./setup.py sdist bdist_wheel
-
-  docs:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - uses: ammaraskar/sphinx-action@master
-      with:
-        docs-folder: "doc/"
-        build-command: "sphinx-build -E -a --color -v -j 'auto' -b html . doc/_build"
-        pre-build-command: "sphinx-apidoc -f -o doc/_api ./dilldb"
-    - uses: actions/upload-artifact@v1
-      with:
-        name: DocumentationHTML
-        path: doc/_build/html
+      - name: build doc
+        run: |
+          pip install sphinxcontrib-napoleon
+          ./build_gh
 
