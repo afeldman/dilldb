@@ -1,0 +1,825 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to DillDB’s documentation! &#8212; DillDB 0.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-dilldb">
+<span id="welcome-to-dilldb-s-documentation"></span><h1>Welcome to DillDB’s documentation!<a class="headerlink" href="#module-dilldb" title="Permalink to this headline">¶</a></h1>
+<p>key value database based on pickledb</p>
+<dl class="py function">
+<dt id="dilldb.dbmerge">
+<code class="sig-prename descclassname">dilldb.</code><code class="sig-name descname">dbmerge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">first</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#dilldb.dilldb.DillDB" title="dilldb.dilldb.DillDB">dilldb.dilldb.DillDB</a></span></em>, <em class="sig-param"><span class="n">second</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#dilldb.dilldb.DillDB" title="dilldb.dilldb.DillDB">dilldb.dilldb.DillDB</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dbmerge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merge 2 Databases in the fist db</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>first</strong> (<a class="reference internal" href="#dilldb.dilldb.DillDB" title="dilldb.dilldb.DillDB"><em>DillDB</em></a>) – database one</p></li>
+<li><p><strong>second</strong> (<a class="reference internal" href="#dilldb.dilldb.DillDB" title="dilldb.dilldb.DillDB"><em>DillDB</em></a>) – database two</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>could merge the databases</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="dilldb.load">
+<code class="sig-prename descclassname">dilldb.</code><code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">auto_dump</span><span class="p">:</span> <span class="n">bool</span></em>, <em class="sig-param"><span class="n">sig</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">_json</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#dilldb.dilldb.DillDB" title="dilldb.dilldb.DillDB">dilldb.dilldb.DillDB</a><a class="headerlink" href="#dilldb.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a DillDB object.</p>
+<dl class="py attribute">
+<dt id="dilldb.location">
+<code class="sig-prename descclassname">dilldb.</code><code class="sig-name descname">location</code><a class="headerlink" href="#dilldb.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>path to the database location</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="dilldb.auto_dump">
+<code class="sig-prename descclassname">dilldb.</code><code class="sig-name descname">auto_dump</code><a class="headerlink" href="#dilldb.auto_dump" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>DillDB Object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#dilldb.dilldb.DillDB" title="dilldb.dilldb.DillDB">DillDB</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="module-dilldb.dilldb">
+<span id="dilldb-db"></span><h1>DillDB db<a class="headerlink" href="#module-dilldb.dilldb" title="Permalink to this headline">¶</a></h1>
+<p>pickledb based database for storing data
+int binary or json files.
+the project is strongly typed so be carefull</p>
+<dl class="py class">
+<dt id="dilldb.dilldb.DillDB">
+<em class="property">class </em><code class="sig-prename descclassname">dilldb.dilldb.</code><code class="sig-name descname">DillDB</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">auto_dump</span><span class="p">:</span> <span class="n">bool</span></em>, <em class="sig-param"><span class="n">sig</span><span class="p">:</span> <span class="n">bool</span></em>, <em class="sig-param"><span class="n">_json</span><span class="p">:</span> <span class="n">bool</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dilldb.dilldb.DillDB" title="Permalink to this definition">¶</a></dt>
+<dd><p>DillDB is a key value database.
+The data is stored in a pickle/dill file or
+in json format default is binary (pickle/dill) format</p>
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.append">
+<code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">more</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dilldb.DillDB.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add more to a key’s value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – key to refer to value</p></li>
+<li><p><strong>more</strong> (<em>Any</em>) – add more to the value refered with key</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if more could add to the key value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.dadd">
+<code class="sig-name descname">dadd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dilldb.DillDB.dadd" title="Permalink to this definition">¶</a></dt>
+<dd><p>add element using key and value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – name of dictionary</p></li>
+<li><p><strong>key</strong> (<em>str</em>) – value</p></li>
+<li><p><strong>value</strong> (<em>Any</em>) – value to store</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>true if value set</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.daddp">
+<code class="sig-name descname">daddp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">pair</span><span class="p">:</span> <span class="n">tuple</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dilldb.DillDB.daddp" title="Permalink to this definition">¶</a></dt>
+<dd><p>add an element to the database using a tuple</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – database name</p></li>
+<li><p><strong>pair</strong> (<em>tuple</em>) – key value pair</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>true if tuple elements could stored in</dt><dd><p>database</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.dcreate">
+<code class="sig-name descname">dcreate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dilldb.DillDB.dcreate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a dict, name must be str</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of the new dictionary</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>true if the dictionary is available</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(bool)</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="#dilldb.key_string_error.KeyStringError" title="dilldb.key_string_error.KeyStringError"><strong>KeyStringError</strong></a> – name is not a string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.deldb">
+<code class="sig-name descname">deldb</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dilldb.DillDB.deldb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete everything from the database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>database is empty</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.dexists">
+<code class="sig-name descname">dexists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dilldb.DillDB.dexists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if a key exists or not in a dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – database reference</p></li>
+<li><p><strong>key</strong> (<em>str</em>) – dictionary reference</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>true if key is in the requested dictionary</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.dget">
+<code class="sig-name descname">dget</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; Any<a class="headerlink" href="#dilldb.dilldb.DillDB.dget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the value for a key in a dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – db key</p></li>
+<li><p><strong>key</strong> (<em>str</em>) – value key</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>element stored in dictionary</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(Any)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.dgetall">
+<code class="sig-name descname">dgetall</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#dilldb.dilldb.DillDB.dgetall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all key-value pairs from a dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – db key</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the dictionary stored under the key</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.dkeys">
+<code class="sig-name descname">dkeys</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="headerlink" href="#dilldb.dilldb.DillDB.dkeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all the keys for a dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – database name of dictionary</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of keys</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.dmerge">
+<code class="sig-name descname">dmerge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name1</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">name2</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dilldb.DillDB.dmerge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merge two dicts together into name1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name1</strong> (<em>str</em>) – reference in database</p></li>
+<li><p><strong>name2</strong> (<em>str</em>) – reference in database</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>true if the the merge was successful</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.dpop">
+<code class="sig-name descname">dpop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; Any<a class="headerlink" href="#dilldb.dilldb.DillDB.dpop" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the dictionary element and delete the element</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – database key</p></li>
+<li><p><strong>key</strong> (<em>str</em>) – dictionary key</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>element after deletion</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(Any)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.drem">
+<code class="sig-name descname">drem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dilldb.DillDB.drem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a dict and all of its pairs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – database key</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>delete the dictionary with given name</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.dump">
+<code class="sig-name descname">dump</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dilldb.DillDB.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force dump memory db to the database file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>true if the data is dumped to the file</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.dvals">
+<code class="sig-name descname">dvals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#dilldb.dilldb.DillDB.dvals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all the values for a dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – database name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of all values</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.exists">
+<code class="sig-name descname">exists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dilldb.DillDB.exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>is the key in the data base?</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>str</em>) – reference to value</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>true if the key is in the database</dt><dd><p>else false, the key is not in the database</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; Any<a class="headerlink" href="#dilldb.dilldb.DillDB.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value of a key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>str</em>) – reference information</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>get the value referenced with the key value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Any</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>KeyError</strong> – the key is not right</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.getall">
+<code class="sig-name descname">getall</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="headerlink" href="#dilldb.dilldb.DillDB.getall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of all keys in db</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>get all keys of from the db</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.ladd">
+<code class="sig-name descname">ladd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dilldb.DillDB.ladd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a value to a list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – reference key to list</p></li>
+<li><p><strong>value</strong> (<em>Any</em>) – value referenced with the key to store in the list</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.lappend">
+<code class="sig-name descname">lappend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">pos</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">more</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dilldb.DillDB.lappend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add more to a value in a list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – name of list</p></li>
+<li><p><strong>pos</strong> (<em>int</em>) – position in list</p></li>
+<li><p><strong>more</strong> (<em>Any</em>) – data element</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>true if the data could be added to the list</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.lcreate">
+<code class="sig-name descname">lcreate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dilldb.DillDB.lcreate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a list, name must be str</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name is key in database</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>true it the list could created under the name</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(bool)</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="#dilldb.key_string_error.KeyStringError" title="dilldb.key_string_error.KeyStringError"><strong>KeyStringError</strong></a> – key is not a string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.lexists">
+<code class="sig-name descname">lexists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dilldb.DillDB.lexists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if a value  exists in a list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – list name</p></li>
+<li><p><strong>value</strong> (<em>Any</em>) – is value in list?</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>true if the value is in the named list</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.lextend">
+<code class="sig-name descname">lextend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">seq</span><span class="p">:</span> <span class="n">list</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dilldb.DillDB.lextend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extend a list with a sequence</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – reference to list</p></li>
+<li><p><strong>seq</strong> (<em>list</em>) – list to extend to given list</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the referenced list is extended</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.lget">
+<code class="sig-name descname">lget</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">pos</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; Any<a class="headerlink" href="#dilldb.dilldb.DillDB.lget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return one value in a list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – list name</p></li>
+<li><p><strong>pos</strong> (<em>int</em>) – element in the list</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>value on queried position</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(Any)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.lgetall">
+<code class="sig-name descname">lgetall</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#dilldb.dilldb.DillDB.lgetall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all values in a list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of list</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list under referenced key</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.llen">
+<code class="sig-name descname">llen</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#dilldb.dilldb.DillDB.llen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the length of the list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of list</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>number of elements in list</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.load">
+<code class="sig-name descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dilldb.DillDB.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads, reloads or changes the path to the db file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>location</strong> (<em>str</em>) – file location.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>could load?</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.lpop">
+<code class="sig-name descname">lpop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">pos</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; Any<a class="headerlink" href="#dilldb.dilldb.DillDB.lpop" title="Permalink to this definition">¶</a></dt>
+<dd><p>get one element in list and remove that element</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – list name</p></li>
+<li><p><strong>pos</strong> (<em>int</em>) – position in list</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>return the element on the queried position</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(Any)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.lrange">
+<code class="sig-name descname">lrange</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">start</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#dilldb.dilldb.DillDB.lrange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return range of values in a list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – name of list</p></li>
+<li><p><strong>start</strong> (<em>int</em>) – start position</p></li>
+<li><p><strong>end</strong> (<em>int</em>) – end position</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>sublist</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.lremlist">
+<code class="sig-name descname">lremlist</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#dilldb.dilldb.DillDB.lremlist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a list and all of its values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of list</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>number of deleted elements</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.lremvalue">
+<code class="sig-name descname">lremvalue</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dilldb.DillDB.lremvalue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a value from a certain list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – name of list</p></li>
+<li><p><strong>value</strong> (<em>Any</em>) – any object to delete in list</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>true if the value could removed</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.rem">
+<code class="sig-name descname">rem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dilldb.DillDB.rem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a key value pair</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>str</em>) – reference to value</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>could the key be deleted</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.set">
+<code class="sig-name descname">set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#dilldb.dilldb.DillDB.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the str value of a key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – reference value</p></li>
+<li><p><strong>value</strong> (<em>Any</em>) – any value</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>is the key string type?</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="#dilldb.key_string_error.KeyStringError" title="dilldb.key_string_error.KeyStringError"><strong>KeyStringError</strong></a> – the key is not of string type</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.sigterm_handler">
+<code class="sig-name descname">sigterm_handler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dilldb.dilldb.DillDB.sigterm_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assigns sigterm_handler for graceful shutdown during dump()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dilldb.dilldb.DillDB.totalkeys">
+<code class="sig-name descname">totalkeys</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#dilldb.dilldb.DillDB.totalkeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a total number of keys, lists, and dicts inside the db</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>str</em>) – reference value to get the size of the underlying value.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>if key is set then the value is the size of the value.</dt><dd><p>otherwise the return value us the size of the DillDB</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-dilldb.key_string_error">
+<span id="dilldb-error"></span><h1>DillDB error<a class="headerlink" href="#module-dilldb.key_string_error" title="Permalink to this headline">¶</a></h1>
+<p>Error type. The key value database
+forces the user to use string typed keys</p>
+<dl class="py exception">
+<dt id="dilldb.key_string_error.KeyStringError">
+<em class="property">exception </em><code class="sig-prename descclassname">dilldb.key_string_error.</code><code class="sig-name descname">KeyStringError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'Key/name must be a string!'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dilldb.key_string_error.KeyStringError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Key String Error. A Key has to be a string</p>
+</dd></dl>
+
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">DillDB</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, anton feldmann.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
