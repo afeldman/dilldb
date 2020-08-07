@@ -6,7 +6,7 @@
 Welcome to DillDB's documentation!
 ==================================
 
-.. automodule:: dilldb.dilldb
+.. automodule:: dilldb
     :members:
 
 .. toctree::
