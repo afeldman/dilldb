@@ -1,4 +1,4 @@
-name: dillbd
+name: dillbd doc
 
 on:
   - push
@@ -7,8 +7,9 @@ jobs:
   build:
     strategy:
       matrix:
-        python-version: [3.5, 3.6, 3.7, 3.8]
+        python-version: [3.5]
     runs-on: ubuntu-latest
+
 
     steps:
       - name: Checkout
@@ -27,9 +28,7 @@ jobs:
           pip install pylint || true
           # install sphinx_gallery and matplotlib if available (may not work on pypy)
           pip install sphinx_gallery || true
-      - name: Lint with pylint
-        run: pylint --rcfile=./.pylintrc dilldb
-      - name: Install from source (required for the pre-commit tests)
-        run: pip install .
-      - name: build wheel
-        run: ./setup.py sdist bdist_wheel
+      - name: build doc
+        run: |
+          pip install sphinxcontrib-napoleon
+          ./build_gh
