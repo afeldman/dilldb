@@ -6,6 +6,10 @@ make clean
 make html
 cd ..
 
+#setup git
+git config --global user.email "anton.feldmann@gmail.com"
+git config --global user.name "anton feldmann"
+
 # commit and push
 git add -A
 git commit -m "building and pushing docs"
