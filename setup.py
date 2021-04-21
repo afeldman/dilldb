@@ -17,7 +17,7 @@ setup(name="dilldb",
      install_requires=["setuptools", "dill"],
      py_modules=['dilldb'],
      project_urls={
-        'Documentations': 'https://afeldmangithub.com/dilldb',
+        'Documentations': 'https://afeldman.github.com/dilldb',
         'Source': 'https://github.com/afeldman/dilldb',
         'Tracker': 'https://github.com/afeldman/dilldb/issues'
      },
