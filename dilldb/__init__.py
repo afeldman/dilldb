@@ -1,7 +1,7 @@
 """ key value database based on pickledb """
 from dilldb.dilldb import DillDB
 
-__version__ = (0, 1, 0)
+__version__ = (0, 1, 1)
 __author__ = "anton feldmann"
 __email__ = "anton.feldmann@gmail.com"
 
